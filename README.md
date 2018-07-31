@@ -17,3 +17,12 @@ Nota: Se saltaron la versión 3 debído a que el Modulo de routing tenia conflic
 
 ### Que es Typescript?
 * Superset de javascript - mejorado de javascript - agregado de javascript no reemplazo
+* Agrega nuevas caracteristicas :
+    - Tipos
+    - Clases
+    - Interfaces 
+
+* Typescript es transpilado a javascript, debído a que los navegadores no lo entienden.
+
+
+
