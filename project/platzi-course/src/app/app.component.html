@@ -1,0 +1,13 @@
+<section id="header">
+  <div class="container">
+    <h1>{{ title }}</h1>
+    <button class="btn btn-primary" (click)="show()">Click me!</button>
+    <div class="form-group">
+      <label for=""> Texto que cambia el tituto</label>
+      <input type="text" class="form-control" name="titulo" id="title" aria-describedby="helpId" placeholder="Introduzca el nuevo titulo" [(ngModel)]="title" >
+      <small id="helpId" class="form-text text-muted">Help text</small>
+    </div>
+  </div>
+
+
+</section>
