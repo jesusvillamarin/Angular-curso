@@ -189,7 +189,7 @@ export class ResaltarZoneDirective implements OnInit {
 
  * En el @Input('resaltar') plan: string = '', declaramos el @Input de typescript para decir que recibiremos un elemento del html, el elemento será aquel en el hagamos uso de la directiva, por ejemplo
 
- > <li [resaltar]='option.plan'{{option.nombre +" "+ option.apellido}} - Vive
+ > li [resaltar]='option.plan'{{option.nombre +" "+ option.apellido}} - Vive
  
 * Renderer2 sirve para renderizar los elementos en el html
 * ElementRef es para hacer referencia al elemento que se esta recibiendo en @Input
