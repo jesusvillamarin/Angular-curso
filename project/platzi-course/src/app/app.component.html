@@ -1,13 +1,43 @@
-<section id="header">
+<section id="header-container">
   <div class="container">
     <h1>{{ title }}</h1>
     <button class="btn btn-primary" (click)="show()">Click me!</button>
     <div class="form-group">
       <label for=""> Texto que cambia el tituto</label>
-      <input type="text" class="form-control" name="titulo" id="title" aria-describedby="helpId" placeholder="Introduzca el nuevo titulo" [(ngModel)]="title" >
+      <input type="text" class="form-control" name="titulo" id="title" aria-describedby="helpId" [(ngModel)]="title" placeholder="Introduzca el nuevo titulo">
       <small id="helpId" class="form-text text-muted">Help text</small>
     </div>
+
+    <div class="row">
+      <div class="col-sm-12 col-md-6 text-center">
+        <h4>Amigos que viven lejos</h4>
+        <ul>
+          <ng-container *ngFor="let option of opciones">
+            <li *ngIf='option.status'> {{ option.nombre +" "+ option.apellido }}</li>
+          </ng-container>
+        </ul>
+      </div>
+      <div class="col-sm-12 col-md-6 text-center">
+        <h4>Amigos que viven cerca</h4>
+        <ul>
+          <ng-container *ngFor="let option of opciones; let i = index" [ngSwitch]="option.distancia">
+            <li [resaltar]='option.plan'>{{option.nombre +" "+ option.apellido}} - Vive
+              <span *ngSwitchCase="1" [ngStyle]="{color:'green'}">Muy cerca</span>
+              <span *ngSwitchCase="2" [ngStyle]="{color:'yellow'}">Cerca</span>
+              <span *ngSwitchCase="3" [ngStyle]="{color:'red'}">Lejos</span>
+            </li>
+          </ng-container>
+
+
+        </ul>
+      </div>
+    </div>
   </div>
+
+  <agm-map [latitude]="lat" [longitude]="lng" [zoom]="valor">
+    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+  </agm-map>
+
 
 
 </section>
