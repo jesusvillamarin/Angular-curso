@@ -123,19 +123,25 @@ Es necesario encerrar el elemento que necesitamos agregarle dos directivas estru
 
 ```
 
-### Existe una directiva para cambiar los estilos siempre y cuando se cumpla una condición, en este caso se usa un if ternario
+### Existe una directiva para cambiar los estilos ya sea cuando se cumpla una condición, en este caso se usa un if ternario, ó podemos omitir la condición y que solo asigne un color
+
+
 Esta directiva es ngStyle y va dentro de corchetes [], se puede usar cualquier propiedad de estilos css. Usando una condición if, podras aplicar un estilo si es **true**  y otro diferente si es **false**. Por ejemplo...
 
 ```}
     <ng-container *ngFor="let option of array"> 
         <ul>
-            <li [ngStyle]="{color: (true) ? blue : red}">    
+            <li [ngStyle]="{color: (true) ? 'blue' : 'red'}">    
         </ul>
     </ng-container>
 
     - En este caso nunca va aplicar el color de fuente azul debído a que la condición siempre sera true
 
 ```
+ó sin condición quedaria así
+> <p [ngStyle]={background-color:'red'}> lorem ipsum.... </p>
+
+
 ### Otra directiva mejor que ngStyle es ngClass, la cual permite asignarle una clase completa de css a un elemento html siempre y cuando cumpla una condición, un ejemplo es el de la siguiente manera
 ```
     <ng-container *ngFor=let option of options>
